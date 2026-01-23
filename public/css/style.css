@@ -1,0 +1,328 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.a {
+  color: #222222;
+  opacity: 0.7;
+}
+
+.a:hover {
+  opacity: 1;
+}
+
+/* --- Search Button Styles --- */
+.search-btn {
+  background-color: #fe424d !important;
+  color: #fff !important;
+  border-radius: 25px !important;
+  padding: 0 1rem 0 1rem !important;
+  border: none !important;
+}
+
+.search-btn:hover {
+  background-color: #fe424d !important;
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+.search-btn i {
+  display: inline !important;
+  margin-right: 0.5rem !important;
+}
+
+/* --- Search Input Styles --- */
+.search-input {
+  border-radius: 25px !important;
+  padding: 0.5rem 3rem 0.5rem 3rem !important;
+  font-size: 1rem !important;
+}
+
+/* --- Mobile Menu Styles (Screens smaller than 768px) --- */
+@media (max-width: 768px) {
+
+  /* 1. Make the menu Float & Stand out */
+  .navbar-collapse.show {
+    background-color: #ffffff !important; /* Solid White */
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1) !important; /* Drop Shadow */
+    padding: 1rem !important;
+    border-radius: 0 0 15px 15px !important; /* Rounded bottom corners */
+    border-top: 1px solid #eaeaea !important; /* Subtle separator line */
+    
+    /* Position Absolute makes it float over content */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  /* 2. Spacing for Search Bar */
+  .navbar-nav form {
+    margin: 1.5rem 0 !important;
+  }
+  
+  /* 3. Adjust Input Padding for Mobile */
+  .search-input {
+    padding: 0.5rem 1rem !important;
+  }
+
+  /* 4. Link Hover Effects */
+  .mobile-menu .nav-link {
+    padding-left: 1rem !important;
+    transition: 0.3s all ease !important;
+    border-radius: 10px !important;
+  }
+
+  .mobile-menu .nav-link:hover {
+    background-color: #f7f7f7 !important;
+    color: #000 !important;
+    padding-left: 1.5rem !important;
+  }
+}
+
+/* Footer */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links, .f-info-socials, .f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.f-info {
+    text-align: center;
+    height: 8rem;
+    display: flex;
+    background-color: #ebebeb;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* Cards */
+.listing-card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400;
+}
+
+.listing-link {
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    background-color: white;
+    opacity: 0.2;
+}
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Edit Page */
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Show Page */
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Map */
+#map { 
+    height: 400px;
+    width: 80vh;
+}
+
+/* Index Options */
+/* =========================================
+   1. NAVBAR & SEARCH STYLES (Unchanged)
+   ========================================= */
+.search-btn {
+  background-color: #fe424d !important;
+  color: #fff !important;
+  border-radius: 25px !important;
+  padding: 0 1rem 0 1rem !important;
+  border: none !important;
+}
+
+.search-btn:hover {
+  background-color: #fe424d !important;
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+.search-btn i {
+  display: inline !important;
+  margin-right: 0.5rem !important;
+}
+
+.search-input {
+  border-radius: 25px !important;
+  padding: 0.5rem 3rem 0.5rem 3rem !important;
+  font-size: 1rem !important;
+}
+
+/* Mobile Menu Styles (Screens smaller than 768px) */
+@media (max-width: 768px) {
+  .navbar-collapse.show {
+    background-color: #ffffff !important;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1) !important;
+    padding: 1rem !important;
+    border-radius: 0 0 15px 15px !important;
+    border-top: 1px solid #eaeaea !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .navbar-nav form {
+    margin: 1.5rem 0 !important;
+  }
+  
+  .search-input {
+    padding: 0.5rem 1rem !important;
+  }
+
+  .mobile-menu .nav-link {
+    padding-left: 1rem !important;
+    transition: 0.3s all ease !important;
+    border-radius: 10px !important;
+  }
+
+  .mobile-menu .nav-link:hover {
+    background-color: #f7f7f7 !important;
+    color: #000 !important;
+    padding-left: 1.5rem !important;
+  }
+}
+
+/*  FILTERS & TAX TOGGLE STYLES */
+
+/* Filter Container: Forces horizontal scrolling */
+#filters {
+  display: flex;
+  flex-wrap: nowrap !important; /* Never wrap to new line */
+  overflow-x: auto !important;  /* Horizontal scroll enabled */
+  align-items: center;
+  gap: 1.5rem; 
+  padding: 1rem 0;
+  width: 100%;
+}
+
+/* Hide scrollbar for clean look */
+#filters::-webkit-scrollbar {
+  display: none;
+}
+#filters {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+/* Individual Filter Item */
+.filter {
+  text-align: center;
+  margin-right: 0.5rem;
+  opacity: 0.7;
+  flex-shrink: 0; /* Ensures icons don't shrink */
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.filter:hover {
+  opacity: 1;
+}
+
+.filter p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Tax Toggle Switch */
+.tax-toggle {
+  border: 1px solid #ced4da;
+  border-radius: 1rem;
+  height: 3rem;
+  padding: 0 1rem;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* Keeps size fixed */
+  background-color: white; 
+}
+
+/* --- HIDE TAX TOGGLE ON MOBILE --- */
+/* If screen is smaller than 768px (MD breakpoint), hide it */
+@media (max-width: 768px) {
+  .tax-toggle {
+    display: none !important;
+  }
+}
