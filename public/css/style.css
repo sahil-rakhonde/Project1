@@ -255,9 +255,7 @@ body {
 }
 
 /* Index Options */
-/* =========================================
-   1. NAVBAR & SEARCH STYLES (Unchanged)
-   ========================================= */
+/*1. NAVBAR & SEARCH STYLES (Unchanged)*/
 .search-btn {
   background-color: #fe424d !important;
   color: #fff !important;
