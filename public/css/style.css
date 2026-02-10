@@ -204,7 +204,7 @@ body {
 
 .btns {
     display: flex;
-    gap: 1rem; /* Better than margin for spacing flex items */
+    gap: 1rem; 
     margin-top: 1rem;
 }
 
@@ -214,24 +214,42 @@ body {
     border: none;
 }
 
+/* Review Box Styling */
+.review-card {
+    height: 100%;
+    min-height: 150px;
+    max-height: 250px; /* Limits height so long reviews don't break layout */
+    overflow-y: auto;  /* Adds scrollbar if review is too long */
+}
+
+/* Custom Scrollbar for Reviews (Optional) */
+.review-card::-webkit-scrollbar {
+    width: 5px;
+}
+.review-card::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
     .show-img {
         height: 25vh; 
     }
 
+    /* Keeps buttons on the same line */
     .btns {
-        flex-direction: column; /* Stacks buttons on phones */
+        flex-direction: row; 
+        justify-content: flex-start;
     }
 
     .btns a, .btns button {
-        width: 100%; /* Easy to tap with thumb */
+        width: auto; /* Buttons stay only as wide as their text */
         margin-left: 0 !important;
     }
     
-    /* Ensures content doesn't touch the screen edges */
     .show-card-container {
-        padding: 0 1.5rem; 
+        padding: 0 1rem; 
     }
 }
 /* change */
