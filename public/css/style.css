@@ -194,16 +194,17 @@ body {
     padding-right: 0;
 } */
 
-/* Show Page */
+/* Show Page & Edit Page Styling */
 .show-img {
     height: 30vh;
     width: 100%;
     object-fit: cover;
-    border-radius: 1.5rem !important; /* Matches Bootstrap card styling */
+    border-radius: 1.5rem !important;
 }
 
 .btns {
     display: flex;
+    gap: 1rem; /* Better than margin for spacing flex items */
     margin-top: 1rem;
 }
 
@@ -216,22 +217,21 @@ body {
 /* Responsiveness */
 @media (max-width: 768px) {
     .show-img {
-        height: 25vh; /* Slightly smaller on mobile */
+        height: 25vh; 
     }
 
     .btns {
-        flex-direction: column; /* Stack Edit/Delete buttons */
-        gap: 10px;
+        flex-direction: column; /* Stacks buttons on phones */
     }
 
     .btns a, .btns button {
-        width: 100%; /* Full width buttons for easy tapping */
+        width: 100%; /* Easy to tap with thumb */
         margin-left: 0 !important;
     }
     
-    /* Adjusting the container padding for mobile */
-    .show-card {
-        padding: 0 1rem; 
+    /* Ensures content doesn't touch the screen edges */
+    .show-card-container {
+        padding: 0 1.5rem; 
     }
 }
 /* change */
