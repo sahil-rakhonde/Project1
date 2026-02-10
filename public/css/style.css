@@ -326,3 +326,33 @@ body {
     display: none !important;
   }
 }
+ /* Change */
+/* Responsive Map Height */
+#map {
+    height: 300px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    #map {
+        height: 250px; /* Smaller height for mobile devices */
+    }
+}
+
+/* Review Card spacing fix */
+.review-card {
+    padding: 0; /* Ensures inner content doesn't hit borders on small screens */
+}
+
+/* Starability alignment */
+.starability-result {
+    transform: scale(0.9); /* Slightly smaller stars on tiny screens */
+    transform-origin: left;
+}
+
+@media (min-width: 768px) {
+    .starability-result {
+        transform: scale(1);
+    }
+}
