@@ -3,36 +3,37 @@
     const mapToken = "<%= process.env.MAP_TOKEN %>";
     const listing = <%- JSON.stringify(listing) %>;
 </script>
+
 <div class="row mt-3">
-    <div class="col-8 offset-3">
+    <div class="col-12 col-md-8 offset-md-3">
         <h3><%= listing.title %></h3>
     </div>
-    <div class="card col-6 offset-3 show-card listing-card">
-            <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
-            <div class="card-body">
-                <p class="card-text"><i><b>Owned by <%= listing.owner.username %></b></i></p>
-                <p class="card-text"><%= listing.description %></p> 
-                <p class="card-text">&#8377; <%= listing.price.toLocaleString("en-IN") %></p>
-                <p class="card-text"><%= listing.location %></p>
-                <p class="card-text"><%= listing.country %></p>
-            </div>
+
+    <div class="card col-12 col-md-6 offset-md-3 show-card listing-card">
+        <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
+        <div class="card-body">
+            <p class="card-text"><i><b>Owned by <%= listing.owner.username %></b></i></p>
+            <p class="card-text"><%= listing.description %></p> 
+            <p class="card-text">&#8377; <%= listing.price.toLocaleString("en-IN") %></p>
+            <p class="card-text"><%= listing.location %></p>
+            <p class="card-text"><%= listing.country %></p>
+        </div>
     </div>
-    <br>
 </div>
 
 <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
-<div class="btns">
-    <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
+<div class="btns mb-3 d-flex flex-wrap offset-md-3">
+    <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark edit-btn me-3">Edit</a>
     <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-            <button class="btn btn-dark offset-5">Delete</button>
+        <button class="btn btn-dark">Delete</button>
     </form>
 </div>
 <% } %>
 
+<hr class="col-10 offset-1 col-md-8 offset-md-3">
 
-<div class="col-8 offset-3 mb-3">
+<div class="col-12 col-md-8 offset-md-3 mb-3">
     <% if(currUser) { %>
-    <hr>
     <h4>Leave a Review</h4>
     <form action="/listings/<%= listing.id %>/reviews" method="POST" novalidate class="needs-validation">
         <div class="mb-3 mt-3">
@@ -55,25 +56,21 @@
         <div class="mb-3 mt-3">
             <label for="comment" class="form-label">Comments</label>
             <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control" required></textarea>
-            <div class="invalid-feedback">Plese add some comments for review</div>
+            <div class="invalid-feedback">Please add some comments for review</div>
         </div>
-        <br>
         <button class="btn btn-outline-dark">Submit</button>
-        </form>
+    </form>
     <% } %>
+
     <% if(listing.reviews.length > 0) { %>
-        <div class="row">
-            <hr>
+        <div class="row mt-3">
             <p><b>All Reviews</b></p>
             <% for(review of listing.reviews) { %>
-            <div class="card col-5 ms-3 mb-3">
+            <div class="card col-12 col-md-5 ms-md-3 mb-3">
                 <div class="card-body">
                     <h5 class="card-title">@<%= review.author.username %></h5>
-                    <p class="card-tex starability-result" 
-                    data-rating="<%= review.rating %>"
-                    ></p>
+                    <p class="starability-result" data-rating="<%= review.rating %>"></p>
                     <p class="card-text"><%= review.comment %></p>
-                    
                 </div>
                 <% if(currUser && currUser._id.equals(review.author._id)) { %>
                 <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" class="mb-3" method="POST">
@@ -84,12 +81,11 @@
             <% } %>
         </div>
     <% } %>
-    </div>
-    <div class="col-8 offset-3 mb-3">
-        <h3>Where you'll be</h3>
-        <div id="map"></div>
-    </div>
+</div>
+
+<div class="col-12 col-md-8 offset-md-3 mb-3">
+    <h3>Where you'll be</h3>
+    <div id="map" style="height: 300px; width: 100%;"></div>
 </div>
 
 <script src="/js/map.js"></script>
-
