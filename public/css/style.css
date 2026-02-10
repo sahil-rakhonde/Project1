@@ -180,20 +180,6 @@ body {
     border: none !important;
 }
 
-/* Show Page
-.show-img {
-    height: 30vh;
-}
-
-.btns {
-    display: flex;
-}
-
-.show-card {
-    padding-left: 0;
-    padding-right: 0;
-} */
-
 /* Show Page & Edit Page Styling */
 .show-img {
     height: 30vh;
@@ -252,11 +238,20 @@ body {
         padding: 0 1rem; 
     }
 }
-/* change */
-/* Map */
+
+/* Map Styling */
 #map { 
     height: 400px;
-    width: 80vh;
+    width: 100%; /* Take full width of its parent container */
+    max-width: 100%; /* Prevent overflow */
+    border-radius: 1rem;
+}
+
+/* Responsiveness for Map */
+@media (max-width: 768px) {
+    #map {
+        height: 300px; /* Slightly shorter on mobile */
+    }
 }
 
 /* Index Options */
