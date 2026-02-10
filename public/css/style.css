@@ -198,38 +198,40 @@ body {
 .show-img {
     height: 30vh;
     width: 100%;
-    object-fit: cover; /* Ensures the image doesn't stretch weirdly */
+    object-fit: cover;
+    border-radius: 1.5rem !important; /* Matches Bootstrap card styling */
 }
 
 .btns {
     display: flex;
-    gap: 10px; /* Adds space between buttons */
+    margin-top: 1rem;
 }
 
 .show-card {
     padding-left: 0;
     padding-right: 0;
+    border: none;
 }
 
-/* Responsiveness for Tablets and Mobile */
+/* Responsiveness */
 @media (max-width: 768px) {
     .show-img {
-        height: 25vh; /* Slightly shorter on mobile to save vertical space */
+        height: 25vh; /* Slightly smaller on mobile */
     }
 
     .btns {
-        flex-direction: column; /* Stacks buttons vertically */
-        width: 100%;
+        flex-direction: column; /* Stack Edit/Delete buttons */
+        gap: 10px;
     }
 
     .btns a, .btns button {
-        width: 100%; /* Makes buttons full-width for easier tapping */
-        text-align: center;
+        width: 100%; /* Full width buttons for easy tapping */
+        margin-left: 0 !important;
     }
-
+    
+    /* Adjusting the container padding for mobile */
     .show-card {
-        padding-left: 15px; /* Adds breathing room on small screens */
-        padding-right: 15px;
+        padding: 0 1rem; 
     }
 }
 /* change */
