@@ -93,6 +93,11 @@ app.get("/privacy", (req, res) => {
     res.render("listings/privacy.ejs");
 });
 
+// Terms of Service Route
+app.get("/terms", (req, res) => {
+    res.render("listings/terms.ejs");
+});
+
 app.all("*splat", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
 });
