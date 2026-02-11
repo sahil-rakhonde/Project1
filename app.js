@@ -88,6 +88,11 @@ app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
+// Privacy Policy Route
+app.get("/privacy", (req, res) => {
+    res.render("listings/privacy.ejs");
+});
+
 app.all("*splat", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found!"));
 });
