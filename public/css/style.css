@@ -327,36 +327,51 @@ body {
 /* FILTERS & TAX TOGGLE STYLES */
 
 /* Filter Container: Forces horizontal scrolling */
+/* Container: Horizontal Scroll & Layout */
 #filters {
-    display: flex;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    align-items: center;
-    padding: 1rem 0;
+  display: flex;
+  flex-wrap: nowrap !important; 
+  overflow-x: auto !important;  
+  align-items: center;
+  gap: 1.5rem; 
+  padding: 1rem 0;
+  width: 100%;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 
+#filters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual Filter Item */
 .filter {
-    text-align: center;
-    margin-right: 2rem;
-    margin-top: 1rem;
-    opacity: 0.7;
-    cursor: pointer;
-    transition: 0.2s;
-    min-width: 60px;
+  text-align: center;
+  margin-right: 0.5rem;
+  opacity: 0.7;
+  flex-shrink: 0; 
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid transparent; /* Prevents layout jump on hover */
+  padding-bottom: 5px;
 }
 
-.filter:hover {
-    opacity: 1;
-    border-bottom: 2px solid #fe424d; /* Matches your brand color */
+.filter:hover, .filter.active {
+  opacity: 1;
+  border-bottom: 2px solid #fe424d; /* Matches your brand color */
 }
 
 .filter p {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
+  margin: 0;
+  font-weight: 500;
 }
 
-/* Hide scrollbar but keep functionality */
-#filters::-webkit-scrollbar {
-    display: none;
+/* Icon Styling */
+.filter i {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
 }
 
 /* Tax Toggle Switch */
