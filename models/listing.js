@@ -34,7 +34,11 @@ const listingSchema = new Schema({
     coordinates: {
       type: [Number],
       required: true
-    }
+    },
+    category: {
+    type: String,
+    enum: ["tranding", "rooms", "iconic cities", "mountains", "castles", "amazings pools", "camping", "farms", "arctic", "domes", "ships"], 
+    },
   },
 });
 
