@@ -328,41 +328,35 @@ body {
 
 /* Filter Container: Forces horizontal scrolling */
 #filters {
-  display: flex;
-  flex-wrap: nowrap !important; /* Never wrap to new line */
-  overflow-x: auto !important;  /* Horizontal scroll enabled */
-  align-items: center;
-  gap: 1.5rem; 
-  padding: 1rem 0;
-  width: 100%;
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    align-items: center;
+    padding: 1rem 0;
 }
 
-/* Hide scrollbar for clean look */
-#filters::-webkit-scrollbar {
-  display: none;
-}
-#filters {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
-}
-
-/* Individual Filter Item */
 .filter {
-  text-align: center;
-  margin-right: 0.5rem;
-  opacity: 0.7;
-  flex-shrink: 0; /* Ensures icons don't shrink */
-  cursor: pointer;
-  transition: opacity 0.2s;
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 1rem;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: 0.2s;
+    min-width: 60px;
 }
 
 .filter:hover {
-  opacity: 1;
+    opacity: 1;
+    border-bottom: 2px solid #fe424d; /* Matches your brand color */
 }
 
 .filter p {
-  font-size: 0.8rem;
-  margin: 0;
+    font-size: 0.8rem;
+}
+
+/* Hide scrollbar but keep functionality */
+#filters::-webkit-scrollbar {
+    display: none;
 }
 
 /* Tax Toggle Switch */
