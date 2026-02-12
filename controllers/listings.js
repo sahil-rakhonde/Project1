@@ -10,15 +10,15 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
  module.exports.index = async(req, res) => {
     let { category } = req.query;
-    let allListings;
+    let allListing;
     if (category) {
         // Find listings where the category matches the query
-        allListings = await Listing.find({ category: category });
+        allListing = await Listing.find({ category: category });
     } else {
         // If no category, show all listings as usual
-        allListings = await Listing.find({});
+        allListing = await Listing.find({});
     }
-    res.render("listings/index.ejs", { allListings });
+    res.render("listings/index.ejs", { allListing });
  };
 
 module.exports.renderNewForm = (req, res) => {
