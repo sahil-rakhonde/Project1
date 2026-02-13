@@ -8,18 +8,16 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 //     res.render("listings/index.ejs", {allListing});
 // };
 
- module.exports.index = async(req, res) => {
+module.exports.index = async(req, res) => {
     let { category } = req.query;
-    let allListings;
-    if (category) {
-        // Find listings where the category matches the query
-        allListings = await Listing.find({ category: category });
-    } else {
-        // If no category, show all listings as usual
-        allListings = await Listing.find({});
-    }
-    res.render("listings/index.ejs", { allListings }); //change
- };
+    console.log("Searching for category:", category); // Debug line
+    
+    let filter = category ? { category: category } : {};
+    let allListings = await Listing.find(filter);
+    
+    console.log("Listings found:", allListings.length); // Debug line
+    res.render("listings/index.ejs", { allListings });
+};
 
 module.exports.renderNewForm = (req, res) => {
     res.render("listings/new.ejs");
