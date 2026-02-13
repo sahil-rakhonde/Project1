@@ -18,7 +18,7 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
         // If no category, show all listings as usual
         allListings = await Listing.find({});
     }
-    res.render("listings/index.ejs", { allListing: allListings }); //change
+    res.render("listings/index.ejs", { allListings }); //change
  };
 
 module.exports.renderNewForm = (req, res) => {
