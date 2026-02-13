@@ -10,12 +10,16 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index = async(req, res) => {
     let { category } = req.query;
-    console.log("Searching for category:", category); // Debug line
+    let allListings;
     
-    let filter = category ? { category: category } : {};
-    let allListings = await Listing.find(filter);
-    
-    console.log("Listings found:", allListings.length); // Debug line
+    if (category) {
+        // This finds the category regardless of Uppercase/Lowercase
+        allListings = await Listing.find({ 
+            category: { $regex: `^${category}$`, $options: "i" } 
+        });
+    } else {
+        allListings = await Listing.find({});
+    }
     res.render("listings/index.ejs", { allListings });
 };
 
