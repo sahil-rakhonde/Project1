@@ -385,7 +385,7 @@ body {
 }
 
 /* Tax Toggle Switch */
-/*.tax-toggle {
+.tax-toggle {
   border: 1px solid #ced4da;
   border-radius: 1rem;
   height: 3rem;
@@ -393,33 +393,8 @@ body {
   margin-left: auto;
   display: flex;
   align-items: center;
-  flex-shrink: 0;  Keeps size fixed 
+  flex-shrink: 0; /* Keeps size fixed */
   background-color: white; 
-}*/
-
-.tax-toggle {
-  border: 1px solid #ced4da;
-  border-radius: 1rem;
-  height: 3.25rem; /* Slightly taller for better touch target */
-  padding: 0 1rem;
-  margin-left: auto; /* Pushes the switch to the right of filters */
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Adds a subtle depth like Airbnb */
-}
-
-/* Ensure the switch and label inside have space */
-.tax-toggle .form-check-label {
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-right: 0.5rem;
-}
-
-.tax-toggle .form-check-input {
-  cursor: pointer;
 }
 
 /* Adjust for mobile to prevent layout breaking */
