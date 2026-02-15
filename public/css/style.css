@@ -337,51 +337,41 @@ body {
   gap: 1.5rem; 
   padding: 1rem 0;
   width: 100%;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 
 #filters::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide the actual radio button inputs */
-.filter-input {
-  display: none;
-}
-
-/* Individual Filter Item (Now a Label) */
-.filter-label {
+/* Individual Filter Item */
+.filter {
   text-align: center;
   margin-right: 0.5rem;
   opacity: 0.7;
   flex-shrink: 0; 
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  border-bottom: 2px solid transparent; 
+  border-bottom: 2px solid transparent; /* Prevents layout jump on hover */
   padding-bottom: 5px;
 }
 
-/* Hover Effect */
-.filter-label:hover {
+.filter:hover, .filter.active {
   opacity: 1;
-  border-bottom: 2px solid #fe424d;
+  border-bottom: 2px solid #fe424d; /* Matches your brand color */
 }
 
-/* The "Selected" State: When the radio button is checked, style the label */
-.filter-input:checked + .filter-label {
-  opacity: 1;
-  border-bottom: 2px solid #fe424d;
-  font-weight: 600;
-}
-
-.filter-label p {
+.filter p {
   font-size: 0.8rem;
   margin: 0;
   font-weight: 500;
 }
 
-.filter-label i {
+/* Icon Styling */
+.filter i {
   font-size: 1.2rem;
   margin-bottom: 0.2rem;
 }
