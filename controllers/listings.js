@@ -12,7 +12,7 @@ module.exports.index = async(req, res) => {
     const { category } = req.query;
     let filter = {};
     if(category){
-        filter = { category: category };
+        filter = { category: { $regex: `^${category}$`, $options: 'i' } };
     }
     const allListing = await Listing.find(filter);
     res.render("listings/index.ejs", { allListing });
