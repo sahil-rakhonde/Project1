@@ -328,14 +328,14 @@ body {
 
 /* Filter Container: Forces horizontal scrolling */
 /* Container: Horizontal Scroll & Layout */
+/* Container for all filters */
 #filters {
   display: flex;
   flex-wrap: nowrap !important; 
   overflow-x: auto !important;  
   align-items: center;
-  /* Use a more consistent gap */
-  gap: 2rem; 
-  padding: 0.75rem 0;
+  gap: 1.5rem; 
+  padding: 1rem 0;
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -345,50 +345,46 @@ body {
   display: none;
 }
 
-/* Individual Filter Item */
-.filter {
+/* Hide the actual radio button inputs */
+.filter-input {
+  display: none;
+}
+
+/* Individual Filter Item (Now a Label) */
+.filter-label {
   text-align: center;
-  opacity: 0.6; /* Slightly lower initial opacity for better contrast on hover */
+  margin-right: 0.5rem;
+  opacity: 0.7;
   flex-shrink: 0; 
   cursor: pointer;
-  transition: opacity 0.2s, border-bottom 0.2s;
+  transition: all 0.2s ease-in-out;
   border-bottom: 2px solid transparent; 
-  padding-bottom: 8px; /* More space for the border-bottom */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding-bottom: 5px;
 }
 
-/* Hover and Active states */
-.filter:hover {
+/* Hover Effect */
+.filter-label:hover {
   opacity: 1;
-  border-bottom: 2px solid #bdbdbd; /* Subtle gray on hover */
+  border-bottom: 2px solid #fe424d;
 }
 
-/* Active state for when the filter is selected */
-.filter.active {
+/* The "Selected" State: When the radio button is checked, style the label */
+.filter-input:checked + .filter-label {
   opacity: 1;
-  border-bottom: 2px solid #fe424d; /* Brand color only when active */
+  border-bottom: 2px solid #fe424d;
+  font-weight: 600;
 }
 
-.filter p {
-  font-size: 0.75rem; /* Slightly smaller text is standard for these patterns */
-  margin-top: 0.25rem;
+.filter-label p {
+  font-size: 0.8rem;
+  margin: 0;
   font-weight: 500;
 }
 
-/* Icon Styling */
-.filter i {
-  font-size: 1.4rem; /* Slightly larger icons for better visibility */
+.filter-label i {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
 }
-
-/* Utility: Ensure the container doesn't get squished on mobile */
-@media (max-width: 768px) {
-  #filters {
-    gap: 1.5rem;
-  }
-};
 
 /* Tax Toggle Switch */
 .tax-toggle {

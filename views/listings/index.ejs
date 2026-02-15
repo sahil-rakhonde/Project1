@@ -104,4 +104,11 @@
             }
         }
     });
+
+    document.querySelectorAll('.filter').forEach(filter => {
+        filter.addEventListener('click', () => {
+            const category = filter.querySelector('p').innerText;
+            window.location.href = `/listings?category=${category}`;
+        });
+    });
 </script>
